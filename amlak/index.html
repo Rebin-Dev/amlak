@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Estate | Real Estate</title>
+    <link rel="shortcut icon" href="img/rebin'.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet import" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-container-box {
+            background-color: #0f0f0f;
+            padding-top: 50px;
+            padding-bottom: 20px;
+        }
+        .search-box-wrapper {
+            background-color: #0a0a0a;
+            border: 1px solid #c5a059;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        .search-input-group .form-control,
+        .search-input-group .form-select {
+            background-color: #141414;
+            border: 1px solid #222;
+            color: #fff;
+            height: 50px;
+            border-radius: 8px;
+        }
+        .search-input-group .form-control:focus,
+        .search-input-group .form-select:focus {
+            border-color: #c5a059;
+            box-shadow: none;
+            background-color: #1a1a1a;
+            color: #fff;
+        }
+        .search-input-group .form-control::placeholder {
+            color: #666;
+        }
+        .search-input-group select {
+            color: #666 !important;
+        }
+        .search-input-group select option {
+            background-color: #0a0a0a;
+            color: #fff;
+        }
+        .btn-search-trigger {
+            background-color: #c5a059;
+            color: #000;
+            font-weight: 700;
+            border: none;
+            height: 50px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn-search-trigger:hover {
+            background-color: #a48243;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+
+<header class="main-header ">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <span class="brand-logo">E</span>
+                <span class="brand-name">ESTATE<span class="text-gold">PRO</span></span>
+            </a>
+            
+            <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+                <span class="toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">خانه</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="properties.html">املاک</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fr-1">فروش ویژه</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">درباره ما</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#sbt-1">تماس</a>
+                    </li>
+                </ul>
+                <div class="nav-auth d-flex align-items-center">
+                    <a href="#sbt-1" class="btn-register">ثبت‌نام  |  ورود</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<div class="luxury-divider"></div>
+
+<section class="search-container-box">
+    <div class="container">
+        <div class="search-box-wrapper">
+            <div class="row g-3 search-input-group">
+                <div class="col-12 col-md-5">
+                    <input type="text" id="keywordSearch" class="form-control" placeholder="جستجو بر اساس نام ملک یا موقعیت مکانی...">
+                </div>
+                <div class="col-12 col-sm-6 col-md-3">
+                    <select id="typeSelector" class="form-select">
+                        <option value="">نوع ملک (همه)</option>
+                        <option value="ویلا">ویلا</option>
+                        <option value="آپارتمان">آپارتمان</option>
+                        <option value="عمارت">عمارت</option>
+                    </select>
+                </div>
+                <div class="col-12 col-sm-6 col-md-2">
+                    <select id="locationSelector" class="form-select">
+                        <option value="">موقعیت (همه)</option>
+                        <option value="شمال">مازندران، شمال</option>
+                        <option value="سعادت‌آباد">تهران، سعادت‌آباد</option>
+                        <option value="حافظیه">شیراز، حافظیه</option>
+                    </select>
+                </div>
+                <div class="col-12 col-md-2">
+                    <button id="triggerFilterBtn" class="btn-search-trigger">جستجو</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="featured-products py-5" style="background-color: #0f0f0f;">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-5">
+            <div>
+                <h2 class="display-5 fw-bold text-white">املاک برتر</h2>
+                <div class="header-line" style="width: 60px; height: 4px; background: #c5a059;"></div>
+            </div>
+            <a href="properties.html" class="text-decoration-none text-gold">مشاهده همه <i class="bi bi-arrow-left"></i></a>
+        </div>
+
+        <div class="row g-4" id="propertiesListing">
+            <div class="col-12 col-md-4 property-card-holder" data-title="ویلای مدرن ساحلی" data-type="ویلا" data-location="شمال">
+                <div class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Property">
+                        <span class="price-tag">12,000,000,000 <small>تومان</small></span>
+                    </div>
+                    <div class="card-body p-3 text-white">
+                        <h5 class="mb-1">ویلای مدرن ساحلی</h5>
+                        <p class="text-muted small mb-2">مازندران، شمال</p>
+                        <div class="d-flex justify-content-between text-gold small">
+                            <span><i class="bi bi-bed"></i> ۴ خواب</span>
+                            <span><i class="bi bi-door-open"></i> ۳ حمام</span>
+                            <span><i class="bi bi-rulers"></i> ۳۵۰م</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 property-card-holder" data-title="آپارتمان پانوراما" data-type="آپارتمان" data-location="سعادت‌آباد">
+                <div class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80" alt="Property">
+                        <span class="price-tag">8,500,000,000 <small>تومان</small></span>
+                    </div>
+                    <div class="card-body p-3 text-white">
+                        <h5 class="mb-1">آپارتمان پانوراما</h5>
+                        <p class="text-muted small mb-2">تهران، سعادت‌آباد</p>
+                        <div class="d-flex justify-content-between text-gold small">
+                            <span><i class="bi bi-bed"></i> ۲ خواب</span>
+                            <span><i class="bi bi-door-open"></i> ۱ حمام</span>
+                            <span><i class="bi bi-rulers"></i> ۱۸۰م</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4 property-card-holder" data-title="عمارت تاریخی" data-type="عمارت" data-location="حافظیه">
+                <div class="product-card">
+                    <div class="card-img-wrapper">
+                        <img src="img/10.jpg" alt="Property">
+                        <span class="price-tag">25,000,000,000 <small>تومان</small></span>
+                    </div>
+                    <div class="card-body p-3 text-white">
+                        <h5 class="mb-1">عمارت تاریخی</h5>
+                        <p class="text-muted small mb-2">شیراز، حافظیه</p>
+                        <div class="d-flex justify-content-between text-gold small">
+                            <span><i class="bi bi-bed"></i> ۶ خواب</span>
+                            <span><i class="bi bi-door-open"></i> ۵ حمام</span>
+                            <span><i class="bi bi-rulers"></i> ۸۰۰م</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="special-offers py-5">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-end mb-4">
+            <div>
+                <h2 class="display-5 fw-bold text-white" id="fr-1">فروش ویژه</h2>
+                <div class="header-line" style="width: 60px; height: 4px; background: #c5a059;"></div>
+            </div>
+            <a href="properties.html" class="text-decoration-none text-gold">مشاهده همه <i class="bi bi-arrow-left"></i></a>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6">
+                <div class="special-card position-relative overflow-hidden rounded-4 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1613490493576-7fde63acd811?auto=format&fit=crop&w=1200&q=80" class="w-100 object-fit-cover" style="height: 400px;" alt="Special">
+                    <div class="special-overlay p-4 d-flex flex-column justify-content-end" style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); height: 100%;">
+                        <span class="badge bg-danger mb-2 w-fit" style="width: fit-content;">تخفیف محدود</span>
+                        <h3 class="text-white">ویلای لوکس با قیمت استثنائی</h3>
+                        <p class="text-light opacity-75">فقط تا پایان این هفته</p>
+                        <a href="property-details.html" class="btn btn-gold mt-3">مشاهده پیشنهاد</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6">
+                <div class="special-card position-relative overflow-hidden rounded-4 shadow-lg">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" class="w-100 object-fit-cover" style="height: 400px;" alt="Special">
+                    <div class="special-overlay p-4 d-flex flex-column justify-content-end" style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent); height: 100%;">
+                        <span class="badge bg-warning text-dark mb-2 w-fit" style="width: fit-content;">پیشنهاد طلایی</span>
+                        <h3 class="text-white">پنت‌هاوس با شرایط اقساطی</h3>
+                        <p class="text-light opacity-75">فرصت طلایی سرمایه‌گذاری</p>
+                        <a href="property-details2.html" class="btn btn-gold mt-3">مشاهده پیشنهاد</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="services-section py-5" style="background-color: #0f0f0f; margin-top: 80px;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-white">خدمات اختصاصی ما</h2>
+            <div class="mx-auto mt-3" style="width: 60px; height: 3px; background: #c5a059;"></div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-4">
+                <div class="service-card text-center p-4">
+                    <div class="icon-box mb-4">
+                        <i class="bi bi-shield-check" style="font-size: 3rem; color: #c5a059;"></i>
+                    </div>
+                    <h4 class="text-white mb-3">امنیت معاملات</h4>
+                    <p class="text-white">تضمین کامل امنیت قانونی و مالی تمامی قراردادهای خرید و فروش شما.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="service-card text-center p-4">
+                    <div class="icon-box mb-4">
+                        <i class="bi bi-gem" style="font-size: 3rem; color: #c5a059;"></i>
+                    </div>
+                    <h4 class="text-white mb-3">املاک منحصر‌به‌فرد</h4>
+                    <p class="text-white">دسترسی به مجموعه‌ای از لوکس‌ترین و خاص‌ترین املاک که در بازار عمومی نیست.</p>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-4">
+                <div class="service-card text-center p-4">
+                    <div class="icon-box mb-4">
+                        <i class="bi bi-person-vcard" style="font-size: 3rem; color: #c5a059;"></i>
+                    </div>
+                    <h4 class="text-white mb-3">مشاوره شخصی</h4>
+                    <p class="text-white">مشاوران متخصص ما در تمام مراحل انتخاب و خرید ملک همراه شما هستند.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="why-us-section py-5" style="background-color: #0a0a0a; margin-top: 80px;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-white">چرا Luxury Estates؟</h2>
+            <div class="mx-auto mt-3" style="width: 60px; height: 3px; background: #c5a059;"></div>
+        </div>
+
+        <div class="row g-4 align-items-center">
+            <div class="col-12 col-lg-6">
+                <div class="why-us-image">
+                    <img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80" alt="Luxury Estate" class="img-fluid rounded-4">
+                </div>
+            </div>
+
+            <div class="col-12 col-lg-6">
+                <div class="ps-lg-4">
+                    <div class="mb-4">
+                        <h4 class="text-white mb-2">انتخابی خاص برای سلیقه خاص</h4>
+                        <p class="text-white-50 mb-0">ما فقط ملک نمی‌فروشیم؛ تجربه‌ای لوکس، مطمئن و متفاوت ارائه می‌دهیم.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-white mb-2">دسترسی به املاک خاص</h4>
+                        <p class="text-white-50 mb-0">مجموعه‌ای از بهترین املاک لوکس که به‌سختی در بازار پیدا می‌شوند.</p>
+                    </div>
+
+                    <div class="mb-4">
+                        <h4 class="text-white mb-2">پشتیبانی کامل</h4>
+                        <p class="text-white-50 mb-0">از اولین تماس تا نهایی شدن قرارداد، کنار شما هستیم.</p>
+                    </div>
+
+                    <div class="d-flex flex-wrap gap-3 mt-4">
+                        <div class="why-stat">
+                            <span class="d-block text-gold fw-bold fs-3">500+</span>
+                            <span class="text-white">ملک خاص</span>
+                        </div>
+                        <div class="why-stat">
+                            <span class="d-block text-gold fw-bold fs-3">100%</span>
+                            <span class="text-white">اعتماد</span>
+                        </div>
+                        <div class="why-stat">
+                            <span class="d-block text-gold fw-bold fs-3">24H</span>
+                            <span class="text-white">پشتیبانی</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="testimonials-section py-5" style="background-color: #0a0a0a; margin-top: 80px;">
+    <div class="container">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-white">تجربه مشتریان ما</h2>
+            <div class="mx-auto mt-3" style="width: 60px; height: 3px; background: #c5a059;"></div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="testimonial-card p-4">
+                    <i class="bi bi-quote fs-1 text-gold mb-3"></i>
+                    <p class="text-white mb-4">بهترین تجربه خرید ملک در عمرم. همه چیز شفاف، حرفه‌ای و فوق‌العاده سریع انجام شد.</p>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <h6 class="text-white mb-0">مهندس علی رضایی</h6>
+                            <small class="text-gold">سرمایه‌گذار</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="testimonial-card p-4">
+                    <i class="bi bi-quote fs-1 text-gold mb-3"></i>
+                    <p class="text-white mb-4">تنوع املاک Luxury Estates واقعاً بی‌نظیره. دقیقاً همونی رو پیدا کردم که مد نظرم بود.</p>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <h6 class="text-white mb-0">سارا اکبری</h6>
+                            <small class="text-gold">خریدار ویلا</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="testimonial-card p-4">
+                    <i class="bi bi-quote fs-1 text-gold mb-3"></i>
+                    <p class="text-white mb-4">پشتیبانی و پیگیری تیمشون عالیه. از ابتدا تا زمان تحویل سند همراه من بودن.</p>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-3">
+                            <h6 class="text-white mb-0">امیر حسین‌زاده</h6>
+                            <small class="text-gold">مالک</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="sbt-1" class="contact-section py-5" style="background-color: #0f0f0f; margin-top: 80px;">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+ 
+            <div class="col-12 col-lg-5">
+                <h2 class="text-white fw-bold mb-3">با ما در ارتباط باشید</h2>
+                <p class="text-white-50 mb-4">تیم مشاورین ما آماده پاسخگویی به تمام سوالات شما در زمینه خرید و فروش املاک هستند.</p>
+                <ul class="list-unstyled text-white">
+                    <li class="mb-3"><i class="bi bi-geo-alt-fill text-gold me-2"></i> کردستان: شهرک دانشگاه کوچه هدایت 2</li>
+                    <li class="mb-3"><i class="bi bi-telephone-fill text-gold me-2"></i> 09180614629</li>
+                    <li class="mb-3"><i class="bi bi-envelope-fill text-gold me-2"></i> rebinnabati1390@gmail.com</li>
+                </ul>
+            </div>
+
+            
+            <div class="col-12 col-lg-7">
+                <div class="contact-form-wrapper p-4 p-md-5">
+                    <form id="telegramForm">
+                        <div class="mb-3">
+                            <input type="text" id="userName" class="form-control" placeholder="نام و نام خانوادگی" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" id="userEmail" class="form-control" placeholder="ایمیل" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea style="resize: none;" id="userMessage" class="form-control" rows="4" placeholder="سوال یا درخواست شما" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-gold w-100 py-2">ارسال پیام به تلگرام</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer-section">
+  <div class="container">
+    <div class="row">
+       <div class="col-lg-4 mb-4">
+        <h4 class="footer-brand">Luxury Estates</h4>
+        <p class="footer-text">
+          تجربه‌ای متفاوت در خرید و فروش املاک لوکس. ما در Luxury Estates متعهد به ارائه بهترین خدمات و مشاوره در زمینه املاک هستیم.
+        </p>
+        <div class="social-links">
+          <a style="text-decoration: none;" href="#"><i class="fab fa-instagram"></i></a>
+          <a style="text-decoration: none;" href="#"><i class="fab fa-linkedin-in"></i></a>
+          <a style="text-decoration: none;" href="#"><i class="fab fa-telegram"></i></a>
+        </div>
+      </div>
+
+       <div class="col-lg-4 mb-4">
+        <h5 class="footer-title">لینک‌های سریع</h5>
+        <ul class="list-unstyled footer-links">
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="properties.html">لیست املاک</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="#sbt-1">تماس با ما</a></li>
+        </ul>
+      </div>
+
+      <div class="col-lg-4 mb-4">
+        <h5 class="footer-title">تماس با ما</h5>
+        <ul class="list-unstyled contact-info">
+          <li><i class="fa fa-map-marker-alt"></i>  کردستان: شهرک دانشگاه کوچه هدایت 2</li>
+          <li><i class="fa fa-phone-alt"></i>  09180614629</li>
+          <li><i class="fa fa-envelope"></i> rebinnabati1390@gmail.com</li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="text-center py-3 footer-bottom">
+        <p>طراحی و توسعه توسط <a href="https://rebindev.ir" target="_blank" rel="noopener">RebinDev</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+document.getElementById('telegramForm').addEventListener('submit', function(e) {
+    e.preventDefault();  
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const message = document.getElementById('userMessage').value;
+    const myTelegram = 'PRO_MAX1253'; 
+    const formattedText = `املاک برتر سلام%0A%0Aنام من: ${name}%0Aایمیل من: ${email}%0Aدرخواست من: ${message}%0A%0Ab با تشکر`;
+    const finalUrl = `https://t.me/${myTelegram}?text=${formattedText}`;
+    window.open(finalUrl, '_blank');
+});
+
+const keywordSearch = document.getElementById('keywordSearch');
+const typeSelector = document.getElementById('typeSelector');
+const locationSelector = document.getElementById('locationSelector');
+const triggerFilterBtn = document.getElementById('triggerFilterBtn');
+const propertyHolders = document.querySelectorAll('.property-card-holder');
+
+function executePropertyFilter() {
+    const textQuery = keywordSearch.value.toLowerCase().trim();
+    const selectedType = typeSelector.value;
+    const selectedLoc = locationSelector.value;
+
+    propertyHolders.forEach(card => {
+        const titleVal = card.getAttribute('data-title').toLowerCase();
+        const typeVal = card.getAttribute('data-type');
+        const locVal = card.getAttribute('data-location');
+
+        const isTextMatch = titleVal.includes(textQuery) || locVal.toLowerCase().includes(textQuery);
+        const isTypeMatch = !selectedType || typeVal === selectedType;
+        const isLocMatch = !selectedLoc || locVal === selectedLoc;
+
+        if (isTextMatch && isTypeMatch && isLocMatch) {
+            card.style.setProperty('display', 'block', 'important');
+        } else {
+            card.style.setProperty('display', 'none', 'important');
+        }
+    });
+}
+
+triggerFilterBtn.addEventListener('click', executePropertyFilter);
+keywordSearch.addEventListener('keyup', executePropertyFilter);
+typeSelector.addEventListener('change', executePropertyFilter);
+locationSelector.addEventListener('change', executePropertyFilter);
+</script>
+
+</body>
+</html>

